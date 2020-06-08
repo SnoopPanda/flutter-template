@@ -1,15 +1,14 @@
 import 'package:flutter/cupertino.dart';
-import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:my_flutter_template/core/utils/toast.dart';
 import 'package:my_flutter_template/generated/i18n.dart';
-import 'package:my_flutter_template/init/splash.dart';
-import 'package:my_flutter_template/router/route_map.dart';
-import 'package:my_flutter_template/router/router.dart';
+import 'package:my_flutter_template/launcher/splash.dart';
+import 'package:my_flutter_template/launcher/router/route_map.dart';
+import 'package:my_flutter_template/launcher/router/router.dart';
 import 'package:my_flutter_template/utils/provider.dart';
 import 'package:my_flutter_template/utils/sputils.dart';
+import 'package:my_flutter_template/utils/toast.dart';
 import 'package:provider/provider.dart';
 
 class DefaultApp {

@@ -1,14 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:my_flutter_template/core/utils/toast.dart';
 import 'package:my_flutter_template/generated/i18n.dart';
+import 'package:my_flutter_template/network/api.dart';
+import 'package:my_flutter_template/network/http_manager.dart';
+import 'package:my_flutter_template/network/result.dart';
 import 'package:my_flutter_template/page/login/loading_dialog.dart';
 import 'package:my_flutter_template/page/login/privacy.dart';
-import 'package:my_flutter_template/router/route_map.dart';
-import 'package:my_flutter_template/router/router.dart';
+import 'package:my_flutter_template/launcher/router/route_map.dart';
+import 'package:my_flutter_template/launcher/router/router.dart';
 import 'package:my_flutter_template/utils/provider.dart';
 import 'package:my_flutter_template/utils/sputils.dart';
+import 'package:my_flutter_template/utils/toast.dart';
 import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
@@ -154,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   //验证通过提交数据
-  void onSubmit(BuildContext context) {
+  Future<void> onSubmit(BuildContext context) async {
     closeKeyboard(context);
 
     showDialog(
@@ -169,8 +172,16 @@ class _LoginPageState extends State<LoginPage> {
         });
 
     UserProfile userProfile = Provider.of<UserProfile>(context, listen: false);
-    // UserProfile userProfile = Provider.of<UserProfile>(context, listen: false);
 
+    final Result result = await HttpManager.instance.request(APIs.fetchChannel);
+    if(result.type == ResultType.success) {
+      ToastUtils.toast(I18n.of(context).loginSuccess);
+      print(result.data);
+    }else {
+      print(result.data);
+    }
+
+    
   //   XHttp.post("/user/login", {
   //     "username": _unameController.text,
   //     "password": _pwdController.text

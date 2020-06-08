@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_template/core/utils/toast.dart';
+import 'package:my_flutter_template/utils/toast.dart';
 
 class ClickUtils {
   ClickUtils._internal();

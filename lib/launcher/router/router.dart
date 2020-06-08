@@ -1,7 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:my_flutter_template/core/widget/web_view_page.dart';
-import 'package:my_flutter_template/router/transition_animation.dart';
+import 'package:my_flutter_template/launcher/router/transition_animation.dart';
+import 'package:my_flutter_template/page/web_view_page.dart';
 
 
 class XRouter {

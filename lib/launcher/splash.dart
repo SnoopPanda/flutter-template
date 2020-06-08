@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:my_flutter_template/router/route_map.dart';
+import 'package:my_flutter_template/launcher/router/route_map.dart';
 import 'package:my_flutter_template/utils/sputils.dart';
 
 class SplashPage extends StatefulWidget {

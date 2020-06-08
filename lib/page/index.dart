@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_flutter_template/core/utils/click.dart';
 import 'package:my_flutter_template/generated/i18n.dart';
+import 'package:my_flutter_template/utils/click.dart';
 import 'package:my_flutter_template/utils/provider.dart';
 import 'package:provider/provider.dart';
 
