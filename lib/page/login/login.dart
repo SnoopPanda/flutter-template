@@ -5,6 +5,7 @@ import 'package:my_flutter_template/generated/i18n.dart';
 import 'package:my_flutter_template/network/api.dart';
 import 'package:my_flutter_template/network/http_manager.dart';
 import 'package:my_flutter_template/network/result.dart';
+import 'package:my_flutter_template/page/login/channel_model.dart';
 import 'package:my_flutter_template/page/login/loading_dialog.dart';
 import 'package:my_flutter_template/page/login/privacy.dart';
 import 'package:my_flutter_template/launcher/router/route_map.dart';
@@ -176,7 +177,8 @@ class _LoginPageState extends State<LoginPage> {
     final Result result = await HttpManager.instance.request(APIs.fetchChannel);
     if(result.type == ResultType.success) {
       ToastUtils.toast(I18n.of(context).loginSuccess);
-      print(result.data);
+      ChannelModel model = ChannelModel.fromJson(result.data);
+      print(model.channels[0].name);
     }else {
       print(result.data);
     }
