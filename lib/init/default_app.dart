@@ -5,6 +5,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_flutter_template/core/utils/toast.dart';
 import 'package:my_flutter_template/generated/i18n.dart';
+import 'package:my_flutter_template/init/splash.dart';
 import 'package:my_flutter_template/router/route_map.dart';
 import 'package:my_flutter_template/router/router.dart';
 import 'package:my_flutter_template/utils/provider.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: appTheme.themeColor,
           buttonColor: appTheme.themeColor,
         ),
-        // home: SplashPage(),
+        home: SplashPage(),
         onGenerateRoute: XRouter.router.generator,
         routes: RouteMap.routes,
         locale: localeModel.getLocale(),

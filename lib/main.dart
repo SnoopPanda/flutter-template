@@ -1,3 +1,6 @@
-import 'package:my_flutter_template/init/app_init.dart';
+//程序的主入口
+import 'init/app_init.dart';
 
-void main() =>  AppInit.run();
+void main() => AppInit.run();
+
+

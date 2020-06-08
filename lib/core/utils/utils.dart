@@ -11,6 +11,7 @@ class Utils {
 
   ///处理链接
   static void launchURL(String url) async {
+    
     if (await canLaunch(url)) {
       await launch(url);
     } else {

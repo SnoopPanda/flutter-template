@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:my_flutter_template/router/route_map.dart';
 import 'package:my_flutter_template/utils/sputils.dart';
 
 class SplashPage extends StatefulWidget {
@@ -8,6 +9,12 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+
+  @override
+  void initState() {
+    super.initState();
+    countDown();
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,9 +35,9 @@ class _SplashPageState extends State<SplashPage> {
   void goHomePage() {
     String nickName = SPUtils.getNickName();
     if(nickName != null && nickName.isNotEmpty) {
-      Navigator.of(context).pushReplacementNamed('/home');
+      Navigator.of(context).pushReplacementNamed(RouteMap.homePage);
     }else {
-      Navigator.of(context).pushReplacementNamed('/login');
+      Navigator.of(context).pushReplacementNamed(RouteMap.loginPage);
     }
   }
   
