@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'channel_model.dart';
+part of 'channel.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -25,7 +25,6 @@ Channels _$ChannelsFromJson(Map<String, dynamic> json) {
     seqId: json['seqId'] as int,
     abbrEn: json['abbrEn'] as String,
     name: json['name'] as String,
-    channelId: json['channelId'] as int,
   );
 }
 
@@ -34,5 +33,4 @@ Map<String, dynamic> _$ChannelsToJson(Channels instance) => <String, dynamic>{
       'seqId': instance.seqId,
       'abbrEn': instance.abbrEn,
       'name': instance.name,
-      'channelId': instance.channelId,
     };

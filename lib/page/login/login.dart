@@ -5,7 +5,7 @@ import 'package:my_flutter_template/generated/i18n.dart';
 import 'package:my_flutter_template/network/api.dart';
 import 'package:my_flutter_template/network/http_manager.dart';
 import 'package:my_flutter_template/network/result.dart';
-import 'package:my_flutter_template/page/login/channel_model.dart';
+import 'package:my_flutter_template/page/login/channel.dart';
 import 'package:my_flutter_template/page/login/loading_dialog.dart';
 import 'package:my_flutter_template/page/login/privacy.dart';
 import 'package:my_flutter_template/launcher/router/route_map.dart';
@@ -179,8 +179,10 @@ class _LoginPageState extends State<LoginPage> {
       ToastUtils.toast(I18n.of(context).loginSuccess);
       ChannelModel model = ChannelModel.fromJson(result.data);
       print(model.channels[0].name);
+      Navigator.pop(context);
     }else {
       print(result.data);
+      Navigator.pop(context);
     }
 
     

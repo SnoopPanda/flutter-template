@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'channel_model.g.dart';
+part 'channel.g.dart';
 
 @JsonSerializable(nullable: false)
 class ChannelModel {
@@ -32,16 +32,16 @@ class Channels {
   int seqId;
   String abbrEn;
   String name;
-  int channelId;
+  // String channelId;
 
-  Channels({this.nameEn, this.seqId, this.abbrEn, this.name, this.channelId});
+  Channels({this.nameEn, this.seqId, this.abbrEn, this.name});
 
   Channels.fromJson(Map<String, dynamic> json) {
     nameEn = json['name_en'];
     seqId = json['seq_id'];
     abbrEn = json['abbr_en'];
     name = json['name'];
-    channelId = json['channel_id'];
+    // channelId = json['channel_id'];
   }
 
   Map<String, dynamic> toJson() {
@@ -50,7 +50,7 @@ class Channels {
     data['seq_id'] = this.seqId;
     data['abbr_en'] = this.abbrEn;
     data['name'] = this.name;
-    data['channel_id'] = this.channelId;
+    // data['channel_id'] = this.channelId;
     return data;
   }
 }

@@ -29,7 +29,7 @@ class XRouter {
   }
 
   static void goto(BuildContext context, String pageName) {
-    Navigator.push(context, SlidePageRoute(routeName: pageName));
+    Navigator.of(context).pushNamed(pageName);
   }
 
   static void gotoWidget(BuildContext context, Widget widget) {
