@@ -176,10 +176,11 @@ class _LoginPageState extends State<LoginPage> {
 
     final Result result = await HttpManager.instance.request(APIs.fetchChannel);
     if(result.type == ResultType.success) {
+      Navigator.pop(context);
       ToastUtils.toast(I18n.of(context).loginSuccess);
       ChannelModel model = ChannelModel.fromJson(result.data);
       print(model.channels[0].name);
-      Navigator.pop(context);
+      Navigator.of(context).pushReplacementNamed(RouteMap.homePage);
     }else {
       print(result.data);
       Navigator.pop(context);

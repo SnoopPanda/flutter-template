@@ -63,6 +63,8 @@ class _MainHomePageState extends State<MainHomePage> {
               onTap: (index) {
                 status.tabIndex = index;
               },
+              type: BottomNavigationBarType.fixed,
+              fixedColor: Theme.of(context).primaryColor,
             ),
           ),
           // 监听导航栏返回

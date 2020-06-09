@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:my_flutter_template/generated/i18n.dart';
+import 'package:my_flutter_template/network/api.dart';
+import 'package:my_flutter_template/network/http_manager.dart';
+import 'package:my_flutter_template/network/result.dart';
+import 'package:my_flutter_template/utils/toast.dart';
 
 import 'loading_dialog.dart';
 
@@ -144,7 +148,7 @@ class _RegisterPageState extends State<RegisterPage> {
     });
   }
 
-  void onSubmit(BuildContext context) {
+  void onSubmit(BuildContext context) async {
     closeKeyboard(context);
     showDialog(
       context: context,
@@ -158,5 +162,13 @@ class _RegisterPageState extends State<RegisterPage> {
         });
     
     // 注册接口
+    final Result result = await HttpManager.instance.request(APIs.fetchChannel);
+    if(result.type == ResultType.success) {
+      Navigator.pop(context);
+      ToastUtils.toast(I18n.of(context).registerSuccess);
+      Navigator.of(context).pop();
+    }else {
+      Navigator.pop(context);
+    }
   }
 }
